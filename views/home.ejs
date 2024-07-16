@@ -11,6 +11,8 @@
 <body>
     <div class="container">
       <a href="/students/new">Create a new student</a>
+      <a href="/classroom">Open Classroom</a>
+      <a href="/auth/register">Register</a>
           <table class="table">
             <thead>
               <tr>
@@ -28,7 +30,7 @@
                 <th scope="row"><%= e.id %></th>
                 <td><%= e.name %></td>
                 <td><%= e.email %></td>
-                <td><%= e.classroom.name %></td>
+                <td><%= e.classroom %></td>
                 <td><%= e.dob %></td>
                 <td><%= e.mark %></td>
               </tr>

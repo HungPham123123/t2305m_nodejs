@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const student_schema = new mongoose.Schema({
     name: String,
+    
     email: {
         type: String,
         required: [true, "Vui lòng nhập email"],
