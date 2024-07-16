@@ -4,6 +4,7 @@ const nodeMailer = require("nodemailer");
 
 const crypto = require('crypto');
 const bcrypt = require("bcryptjs");
+const mail = require("./../mail/mail")
 exports.register = (req,res)=>{
     res.render("user/register");
 }
@@ -17,6 +18,7 @@ exports.postRegister = async (req,res)=>{
 
         const user = new User(data);
         user.save();
+<<<<<<< HEAD
 
         // send email
         gmail.sendMail({
@@ -26,6 +28,19 @@ exports.postRegister = async (req,res)=>{
             html: "<h1>Sign Up successfully!!</h1><br><p>Thanks you for creating this acc in </p>"
         })
         // gmail
+=======
+        
+        // send email -- nodemailer
+        mail.mail("GMAIL").sendMail({
+            from: "T2305M",
+            to: user.email,
+            cc: "",
+            bcc: "",
+            subject: "NHớ từ giờ gửi có subject ko sẽ bị trượt",
+            // text: ""
+            html: "<h1>Welcome you </h1>"
+        })
+>>>>>>> 05b383b24d31bbe18bc9f124b81d35d4ee96eff1
 
         res.redirect("/");
     } catch (error) {
